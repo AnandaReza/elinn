@@ -114,8 +114,8 @@ function createParticle(x, y, isSparkle) {
     } else {
         // Tambahkan gambar untuk partikel sparkle
         const img = document.createElement("img");
-        img.src = "path/to/your/image.png"; // Ganti dengan path gambar Anda
-        img.style.width = "20px"; // Sesuaikan ukuran gambar
+        img.src = "IMG-20240729-WA0015.jpg"; 
+        img.style.width = "20px"; 
         img.style.height = "20px";
         el.appendChild(img);
     }
