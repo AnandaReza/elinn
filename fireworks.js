@@ -7,9 +7,16 @@ const colors = [
     "#ffffff"
 ];
 const letters = "✨❤I LOVE YOU❤✨";
-const nameLine1 = "Happy New Year";
-const nameLine2 = "Sayang :D";
+const nameLine1 = "Happy Birthday🎉🎉";
+const nameLine2 = "elinn sayangg❤❤ ";
 let letterIndex = 0;
+
+// Tambahkan gambar latar belakang di sini
+const backgroundImages = [
+    'assets/images/background1.jpg', // Gambar pertama
+    'assets/images/background2.jpg', // Gambar kedua
+    'assets/images/background3.jpg'  // Gambar ketiga
+];
 
 // Muat suara
 const launchSound = new Audio('launch.mp3');
@@ -18,7 +25,7 @@ const explosionSound = new Audio('explosion.mp3');
 window.addEventListener('DOMContentLoaded', () => {
     const audio = document.querySelector('audio');
     audio.play().catch(error => {
-      console.error("Autoplay gagal:", error);
+        console.error("Autoplay gagal:", error);
     });
 });
 
@@ -29,6 +36,13 @@ function getRandomLetter() {
 }
 
 function createFirework(x, y) {
+    // Pilih gambar latar belakang acak
+    const randomImage = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+    document.body.style.backgroundImage = `url('${randomImage}')`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.transition = 'background-image 1s ease-in-out';
+
     const launchHeight = Math.random() * (window.innerHeight / 8) + window.innerHeight / 8;
     const projectile = document.createElement("div");
     projectile.classList.add("projectile");
