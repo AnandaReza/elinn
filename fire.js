@@ -8,8 +8,8 @@ const colors = [
     "#ffffff"
 ];
 const letters = "✨❤I LOVE YOU❤✨";
-const nameLine1 = "Happy New Year";
-const nameLine2 = "Sayang :D";
+const nameLine1 = "Happy Birthday";
+const nameLine2 = "Elinn Sayangg❤❤:D";
 let letterIndex = 0;
 
 // Muat suara
