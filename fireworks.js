@@ -13,9 +13,9 @@ let letterIndex = 0;
 
 // Tambahkan gambar latar belakang di sini
 const backgroundImages = [
-    'assets/images/background1.jpg', // Gambar pertama
-    'assets/images/background2.jpg', // Gambar kedua
-    'assets/images/background3.jpg'  // Gambar ketiga
+    'fonts/elin1.jpg', // Gambar pertama
+    'fonts/elin2.jpg', // Gambar kedua
+    'fonts/elin3.jpg'  // Gambar ketiga
 ];
 
 // Muat suara
