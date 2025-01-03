@@ -34,8 +34,8 @@ function createFirework(x, y) {
     projectile.classList.add("projectile");
     document.body.appendChild(projectile);
 
-    projectile.style.left = `${x}px`;
-    projectile.style.top = `${y}px`;
+    projectile.style.left = ${x}px;
+    projectile.style.top = ${y}px;
 
     // Mainkan suara meluncur
     launchSound.currentTime = 0;
@@ -54,7 +54,7 @@ function createFirework(x, y) {
         update: (anim) => {
             const progress = anim.progress;
             const currentY = y - (progress / 100) * launchHeight;
-            projectile.style.top = `${currentY}px`;
+            projectile.style.top = ${currentY}px;
         },
         complete: () => {
             clearInterval(smokeInterval);
@@ -73,8 +73,8 @@ function createRocketSmoke(x, y) {
     const Xsmoke = x - 5;
     const Ysmoke = y - 6;
     smoke.classList.add("smoke");
-    smoke.style.left = `${Xsmoke}px`;
-    smoke.style.top = `${Ysmoke}px`;
+    smoke.style.left = ${Xsmoke}px;
+    smoke.style.top = ${Ysmoke}px;
     document.body.appendChild(smoke);
 
     anime({
@@ -106,23 +106,18 @@ function createBurst(x, y) {
 function createParticle(x, y, isSparkle) {
     const el = document.createElement("div");
     el.classList.add(isSparkle ? "sparkle" : "particule");
-    const instruction = document.querySelector('.instructions')?.style.display = 'none';
+    const instruction = document.querySelector('.instructions').style.display = 'none';
 
     if (!isSparkle) {
         el.textContent = getRandomLetter();
         el.style.color = colors[Math.floor(Math.random() * colors.length)];
     } else {
-        // Tambahkan gambar untuk partikel sparkle
-        const img = document.createElement("img");
-        img.src = "IMG-20240729-WA0015.jpg"; 
-        img.style.width = "20px"; 
-        img.style.height = "20px";
-        el.appendChild(img);
+        el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
     }
 
     const Ypar = y - 140;
-    el.style.left = `${x}px`;
-    el.style.top = `${Ypar}px`;
+    el.style.left = ${x}px;
+    el.style.top = ${Ypar}px;
     document.body.appendChild(el);
 
     animateParticle(el, isSparkle);
@@ -145,8 +140,8 @@ function createNameText(x, y) {
 
     const Xname = x - 90;
     const Yname = y - 160;
-    nameContainer.style.left = `${Xname}px`;
-    nameContainer.style.top = `${Yname}px`;
+    nameContainer.style.left = ${Xname}px;
+    nameContainer.style.top = ${Yname}px;
 
     document.body.appendChild(nameContainer);
 
@@ -189,7 +184,7 @@ function animateParticle(el, isSparkle) {
             opacity: [1, 0.9]
         })
         .add({
-            translateY: `+=${fallDistance}px`,
+            translateY: +=${fallDistance}px,
             opacity: [0.9, 0],
             easing: "easeInCubic",
             duration: duration / 2
@@ -201,6 +196,17 @@ document.addEventListener("click", (e) => {
 });
 
 window.onload = function () {
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    createFirework(centerX, centerY);
+    // Atur latar belakang
+    document.body.style.backgroundImage = "url('assets/images/background.jpg')"; // Ganti dengan path gambar Anda
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+
+    // Firework di pusat layar
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
     createFirework(centerX, centerY);
