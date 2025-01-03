@@ -196,11 +196,8 @@ document.addEventListener("click", (e) => {
 });
 
 window.onload = function () {
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-    createFirework(centerX, centerY);
     // Atur latar belakang
-    document.body.style.backgroundImage = "url('assets/images/background.jpg')"; // Ganti dengan path gambar Anda
+    document.body.style.backgroundImage = "url('fonts/elinn.jpg')"; // Ganti dengan path gambar Anda
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
