@@ -4,57 +4,59 @@
 }
 
 body {
-	margin: 0;
-	background: radial-gradient(circle, #020111, #000000);
-	overflow: hidden;
-	height: 100vh;
-	cursor: pointer;
-	font-family: susu;
-	color: white;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+    margin: 0;
+    background: url('images/your-background-image.jpg') no-repeat center center; /* Tambahkan gambar latar */
+    background-size: cover; /* Menyesuaikan gambar agar memenuhi layar */
+    overflow: hidden;
+    height: 100vh;
+    cursor: pointer;
+    font-family: susu;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background-image 1s ease-in-out; /* Transisi halus saat mengganti latar */
 }
 
 .instructions {
-	font-size: 2rem;
-	font-weight: bold;
-	z-index: 10;
-	color: #ff9671;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 10;
+    color: #ff9671;
 }
 
 .particule {
-	position: absolute;
-	font-size: 2rem;
-	font-family: "susu", serif;
-	font-weight: bold;
-	color: white;
-	transform: scale(0);
-	opacity: 0;
-	text-shadow: 0 0 7px rgb(142 142 142 / 80%);
+    position: absolute;
+    font-size: 2rem;
+    font-family: "susu", serif;
+    font-weight: bold;
+    color: white;
+    transform: scale(0);
+    opacity: 0;
+    text-shadow: 0 0 7px rgb(142 142 142 / 80%);
 }
 
 .sparkle {
-	position: absolute;
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background: white;
-	transform: scale(0);
-	opacity: 0;
-	text-shadow: 0 0 5px rgb(142 142 142 / 80%);
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    transform: scale(0);
+    opacity: 0;
+    text-shadow: 0 0 5px rgb(142 142 142 / 80%);
 }
 
 .projectile {
-    position: absolute; 
+    position: absolute;
     width: 10px;
     height: 10px;
     background-color: #ffffff;
     border-radius: 50%;
     z-index: 10;
-    box-shadow: 0 0 20px 10px rgba(255,255,255,0.523);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.523);
 }
 
 .smoke {
