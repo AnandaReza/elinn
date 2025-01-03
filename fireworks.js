@@ -106,13 +106,18 @@ function createBurst(x, y) {
 function createParticle(x, y, isSparkle) {
     const el = document.createElement("div");
     el.classList.add(isSparkle ? "sparkle" : "particule");
-    const instruction = document.querySelector('.instructions').style.display = 'none';
+    const instruction = document.querySelector('.instructions')?.style.display = 'none';
 
     if (!isSparkle) {
         el.textContent = getRandomLetter();
         el.style.color = colors[Math.floor(Math.random() * colors.length)];
     } else {
-        el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        // Tambahkan gambar untuk partikel sparkle
+        const img = document.createElement("img");
+        img.src = "path/to/your/image.png"; // Ganti dengan path gambar Anda
+        img.style.width = "20px"; // Sesuaikan ukuran gambar
+        img.style.height = "20px";
+        el.appendChild(img);
     }
 
     const Ypar = y - 140;
